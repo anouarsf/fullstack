@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://gomycode:gomycode@gomycode-v5iap.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}
