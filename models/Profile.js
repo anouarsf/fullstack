@@ -12,6 +12,15 @@ role: {
   type: String,
   required : true
 },
+nom: {
+  type: String
+},
+prenom: {
+  type: String
+},
+adresse:{
+  type: String
+}
 
 });
 

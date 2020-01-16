@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 
@@ -126,6 +126,52 @@ res.json({ msg: 'User deleted'});
     res.status(500).send('Server Error');
   }
 });
+
+// PUT api/profile/information
+// ADD profile information
+// Private
+
+router.put('/experience', [auth , [
+  check ('nom' , 'nom is required').not()
+  .isEmpty(),
+  check ('role' , 'role is required').not()
+  .isEmpty()
+  ]
+], async(req, res)=>{
+ const errors = validationResult(req);
+ if(!errors.isEmpty()) {
+   return res.status(400).json ({ errors: errors.array()});
+ }
+
+ const {
+   nom,
+   prenom,
+   adresse,
+   phonenumber
+ }= req.body;
+
+ const newInf = {
+  nom,
+  prenom,
+  adresse,
+  phonenumber
+ }
+
+ try{
+const profile = await Profile.findOne({ user: req.user.id});
+profile.experience.unshift(newInf);
+await profile.save();
+res.json(profile);
+ }
+ catch(err) {
+console.error(err.message);
+res.status(500).send('Server Error');
+ }
+
+
+
+
+} );
 
 
 

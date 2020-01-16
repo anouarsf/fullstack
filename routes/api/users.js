@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { check , validationResult} = require('express-validator/check');
+const { check , validationResult} = require('express-validator');
 const bcrypt = require ('bcryptjs');
 const jwt = require ('jsonwebtoken');
 const config = require('config');
@@ -57,7 +57,7 @@ jwt.sign(payload,
     res.json ({ token });
   });
  } catch(err){
-   // si il ya un erreur
+   // si il ya une erreur
    console.error(err.message);
    res.status(500).send('Server Error')
  }
