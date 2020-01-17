@@ -51,6 +51,7 @@ export default function Login(props) {
           >
             Login
           </Button>
+          <ControlLabel> Don't have an account ? <a href="/Register">  Sign Up</a></ControlLabel>
         </div>
       </form>
     </div>

@@ -134,7 +134,7 @@ res.json({ msg: 'User deleted'});
 router.put('/experience', [auth , [
   check ('nom' , 'nom is required').not()
   .isEmpty(),
-  check ('role' , 'role is required').not()
+  check ('prenom' , 'role is required').not()
   .isEmpty()
   ]
 ], async(req, res)=>{
@@ -144,16 +144,12 @@ router.put('/experience', [auth , [
  }
 
  const {
-   nom,
-   prenom,
-   adresse,
+   role,
    phonenumber
  }= req.body;
 
  const newInf = {
-  nom,
-  prenom,
-  adresse,
+  role,
   phonenumber
  }
 
@@ -165,7 +161,7 @@ res.json(profile);
  }
  catch(err) {
 console.error(err.message);
-res.status(500).send('Server Error');
+res.status(500).send('Server Errooooor');
  }
 
 

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 
 import FormPage from "./views/FormPage";
 import AdminLayout from "./layouts/Admin";
+import Registeruser from "./views/Registeruser";
 
 export default class Register extends React.Component {
   state = {
@@ -21,6 +22,7 @@ export default class Register extends React.Component {
         <Switch>
           <Route path="/login" component={FormPage} />
           {/* <Redirect from="/" to="/login" /> */}
+          <Route path="/register" component={Registeruser}/>
 
           <Route path="/admin" render={props => <AdminLayout {...props} />} />
           <Redirect to="/login" />
