@@ -23,11 +23,8 @@
     border-width: 2px;
     background-color: transparent;
     font-weight: 400;
-    /* opacity: 0.8; */
-    filter: alpha(opacity=80);
     padding: 8px 16px;
-
-    background-color: rgb(59, 148, 231);
-    color: white;
+    background-color: rgb(141, 97, 16);
+    color: rgb(255, 0, 0);
   }
 }

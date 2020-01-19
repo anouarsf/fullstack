@@ -20,7 +20,6 @@ export default function Login(props) {
     }
   }
 
-
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>

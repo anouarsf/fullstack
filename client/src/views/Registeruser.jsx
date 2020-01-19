@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
+import axios from "axios" ;
 
 export default function Registeruser(props) {
   console.log(props);
@@ -11,26 +12,30 @@ export default function Registeruser(props) {
   const [secondname, setSecondname] = useState("");
 
 
+ 
 
   function validateForm() {
-    return email.length > 0 && password.length > 0 && password2.length > 0 && firstname.length > 0 && secondname.length > 0 ;
+   
+    return email.length > 6 && password.length > 0 && password2.length > 0 
+    && firstname.length > 0 
+    && secondname.length > 0 
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (email === "anouar@gmail.com") {
-      console.log(props.history);
-      props.history.push("/admin");
-    }
   
 
-  // if(password !== password2) {
-  //   return console.log('Password incorect');
-  // }
+  function handleSubmit (event) {
+    event.preventDefault();
+    if (password === password2 ) {
+      console.log(props.history);
+      props.history.push("/login");
+    }
+    else  {
+      console.log('Password est incorrect');
+    } 
+    
   }
 
   return (
+
     <div className="Login">
       <form onSubmit={handleSubmit}>
         <div className="Formulair">
@@ -41,17 +46,19 @@ export default function Registeruser(props) {
             <ControlLabel>First Name</ControlLabel>
             <FormControl
               autoFocus
-              type="firstname"
-              value={firstname} required
-              onChange={e => setFirstname(e.target.value)}
+              type="text"
+              placeholder="Your FirstNme"
+              value={firstname} 
+              onChange={e => setFirstname(e.target.value)}              
             />
           </FormGroup>
           <FormGroup controlId="secondname" bsSize="large">
             <ControlLabel>Second Name</ControlLabel>
             <FormControl
               autoFocus
-              type="secondname"
-              value={secondname} required
+              type="text"
+              placeholder="Your SecondName"
+              value={secondname} 
               onChange={e => setSecondname(e.target.value)}
             />
           </FormGroup>
@@ -62,6 +69,7 @@ export default function Registeruser(props) {
             <FormControl
               autoFocus
               type="email"
+              placeholder="Your Email"
               value={email} required
               onChange={e => setEmail(e.target.value)}
             />
@@ -70,6 +78,7 @@ export default function Registeruser(props) {
             <ControlLabel>Password</ControlLabel>
             <FormControl
               value={password} required
+              placeholder="Your Password"
               onChange={e => setPassword(e.target.value)}
               type="password"
             />
@@ -81,6 +90,7 @@ export default function Registeruser(props) {
             <ControlLabel>Password</ControlLabel>
             <FormControl
               value={password2} required
+              placeholder="Confirm your Password"
               onChange={e => setPassword2(e.target.value)}
               type="password"
             />
@@ -91,12 +101,13 @@ export default function Registeruser(props) {
             className="submitForm"
             block
             bsSize="large"
-            disabled={!validateForm()}
+            disabled={!validateForm() }
             type="submit"
+            
           >
             Register
           </Button>
-          <ControlLabel> Do you have an account ? <a href="/login">  LogIn</a></ControlLabel>
+          <ControlLabel> Do you have an account ? <a href="/login"> LogIn </a></ControlLabel>
         </div>
       </form>
     </div>

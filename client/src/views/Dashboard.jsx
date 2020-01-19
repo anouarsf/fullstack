@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Light Bootstrap Dashboard React - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { Component } from "react";
 import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
@@ -69,22 +53,22 @@ class Dashboard extends Component {
                 statsIconText="Last day"
               />
             </Col>
-            <Col lg={3} sm={6}>
+            {/* <Col lg={6} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-graph1 text-danger" />}
-                statsText="Errors"
-                statsValue="23"
+                statsText="10 ans d'experience"
+                statsValue="Dashtock a vu le jour en 1990 sous l’impulsion de Sfayhi Anouar ; un pionnier de l’informatique.  "
                 statsIcon={<i className="fa fa-clock-o" />}
-                statsIconText="In the last hour"
+                statsIconText=""
               />
-            </Col>
-            <Col lg={3} sm={6}>
+            </Col> */}
+            <Col lg={3} sm={3}>
               <StatsCard
-                bigIcon={<i className="fa fa-twitter text-info" />}
+                bigIcon={<i className="fa fa-linkedin text-info" />}
                 statsText="Followers"
-                statsValue="+45"
+                statsValue=" "
                 statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Updated now"
+                statsIconText="Follow us"
               />
             </Col>
           </Row>

@@ -26,8 +26,7 @@ class AdminNavbarLinks extends Component {
     function Logout(event) {
       event.preventDefault();
 
-      // console.log(props.history);
-      // props.history.push("/login");
+     
     }
     const notification = (
       <div>
