@@ -9,7 +9,7 @@
     "git": "^0.1.5",
     "mdbreact": "^4.24.0",
     "moment": "^2.24.0",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "react": "16.8.6",
     "react-bootstrap": "0.32.4",
     "react-chartist": "0.13.3",
